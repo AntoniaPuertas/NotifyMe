@@ -3,6 +3,7 @@ package com.toni.notifyme;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 
+import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -121,6 +122,8 @@ public class MainActivity extends AppCompatActivity {
         notifiyBuilder.setStyle(new NotificationCompat.BigPictureStyle()
                 .bigPicture(androidImage)
                 .setBigContentTitle("Notificación actualizada"));
+        notifiyBuilder.setContentTitle("Titulo modificado")
+                    .setLargeIcon(androidImage);
         mNotifyManager.notify(NOTIFICATION_ID, notifiyBuilder.build());
     }
 
